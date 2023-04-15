@@ -1,0 +1,74 @@
+<meta charset="UTF-8" />
+
+<h1>Indicé de Masa Corpolar</h1>
+
+<script>
+  const saltarLinea = () => {
+    document.write("<br>");
+    document.write("<br>");
+    document.write("<br>");
+  };
+
+  let arr = [];
+
+  const imprimir = (frase) => {
+    document.write(frase);
+    saltarLinea();
+  };
+
+  const calificacionIMC = (imc) => {
+    if (imc < 18.5) {
+      return "insudiciencia ponderal";
+    } else if (18.5 < imc && imc < 24.9) {
+      return "intervalo normal";
+    } else if (imc <= 25) {
+      return "sobrepeso";
+    } else if (25 < imc && imc < 29.9) {
+      return "preobesidad";
+    } else if (imc <= 30) {
+      return "obesidad";
+    } else if (30 < imc && imc < 34.9) {
+      return "obesidad de clase I";
+    } else if (35 < imc && imc < 39.9) {
+      return "obesidad de clase II";
+    } else if (imc <= 40) {
+      return "obesidad de clase III";
+    }
+  };
+
+  const imc = (index, peso, altura, persona) => {
+    let imc = peso / altura ** 2;
+
+    arr.push(imc);
+
+    imprimir(
+      `${
+        index + 1
+      }. El IMC de ${persona} es de ${imc} por lo tanto estas en "${calificacionIMC(
+        imc
+      )}".`
+    );
+  };
+
+  const promedioIMC = () => {
+    let promedio = 0;
+    arr.map((imc) => (promedio = promedio + imc));
+    promedio = promedio / arr.length;
+    return promedio;
+  };
+
+  let numeroPersona = parseInt(prompt("¿Cuantas personas vas a registrar?"));
+
+  for (let i = 0; i < numeroPersona; i++) {
+    imc(
+      i,
+      parseInt(prompt(`¿Cual es el peso de la persona ${i + 1}?`)),
+      parseFloat(prompt(`¿Cual es la estatura persona ${i + 1}?`)),
+      prompt(`¿Como se llama la persona ${i + 1}?`)
+    );
+  }
+
+  imprimir(
+    `El promedio de IMC es de ${promedioIMC()} de ${arr.length} personas`
+  );
+</script>

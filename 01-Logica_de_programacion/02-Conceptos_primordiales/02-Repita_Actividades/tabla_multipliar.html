@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabla de multiplicar</title>
+  </head>
+  <body>
+    <h1>Tabla de multiplicar</h1>
+
+    <script>
+      const saltoLinea = () => {
+        document.write("<br>");
+        document.write("<br>");
+      };
+
+      const imprimir = (infromacion) => {
+        document.write(infromacion);
+        saltoLinea();
+      };
+
+      let numero_multiplicador = parseInt(
+        prompt("¿Que numero quieres multiplicar?")
+      );
+      let numero_limite = parseInt(
+        prompt("¿Hasta que numero queres multiplicar?")
+      );
+      let index = 0;
+
+      imprimir("<h2> Metodo While </h2>");
+
+      while (index <= numero_limite) {
+        imprimir(
+          `${index + 1}.- ${numero_multiplicador} X ${index} = ${
+            numero_multiplicador * index
+          }`
+        );
+
+        index++;
+      }
+
+      imprimir("<h2> Metodo For </h2>");
+
+      for (let i = 0; i <= numero_limite; i++) {
+        imprimir(
+          `${i + 1}.- ${numero_multiplicador} X ${i} = ${
+            numero_multiplicador * i
+          }`
+        );
+
+        index++;
+      }
+    </script>
+  </body>
+</html>

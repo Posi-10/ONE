@@ -1,0 +1,18 @@
+<meta charset="UTF-8" />
+
+<h3>¿Alcohol o gasolina?</h3>
+
+<script>
+  let tanque = 40;
+  let tanqueCompletoKilometroGasolina = 480;
+  let tanqueCompletoKilometroAlcohol = 300;
+  let kilometroPorLitroGasolina = tanqueCompletoKilometroGasolina / tanque;
+  let kilometroPorLitroAlcogol = tanqueCompletoKilometroAlcohol / tanque;
+
+  document.write(
+    `El consimo del carro de gasolina es ${kilometroPorLitroGasolina} kilometros por litro<br><br>`
+  );
+  document.write(
+    `El consimo del carro de alcohol es ${kilometroPorLitroAlcogol} kilometros por litro`
+  );
+</script>

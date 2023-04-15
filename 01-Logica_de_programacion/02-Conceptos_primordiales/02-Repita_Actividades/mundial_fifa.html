@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mundial FIFA</title>
+  </head>
+  <body>
+    <h1>Mundial FIFA</h1>
+
+    <script>
+      const saltoLinea = () => {
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+      };
+
+      const imprimir = (infromacion) => {
+        document.write(infromacion);
+        saltoLinea();
+      };
+
+      let primer_mundia = 1930;
+      let date = new Date();
+      let year = date.getFullYear();
+
+      alert(
+        `El primer mundial de la FIFA fue en el año ${primer_mundia} eso fue hace ${
+          year - primer_mundia
+        }.`
+      );
+
+      imprimir("<ul>");
+      while (year >= primer_mundia) {
+        imprimir(`<li>${primer_mundia}</li>`);
+
+        primer_mundia = primer_mundia + 4;
+      }
+      imprimir("</ul>");
+    </script>
+  </body>
+</html>

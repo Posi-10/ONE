@@ -1,0 +1,20 @@
+<canvas width="500" height="500"></canvas>
+
+<script>
+  const canvas = document.querySelector("canvas");
+  let escuadra = canvas.getContext("2d");
+
+  escuadra.fillStyle = "#000";
+  escuadra.beginPath();
+  escuadra.moveTo(50, 50);
+  escuadra.lineTo(50, 400);
+  escuadra.lineTo(400, 400);
+  escuadra.fill();
+
+  escuadra.fillStyle = "#fff";
+  escuadra.beginPath();
+  escuadra.moveTo(100, 175);
+  escuadra.lineTo(100, 350);
+  escuadra.lineTo(275, 350);
+  escuadra.fill();
+</script>

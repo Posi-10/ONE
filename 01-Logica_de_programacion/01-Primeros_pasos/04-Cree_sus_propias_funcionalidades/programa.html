@@ -1,0 +1,23 @@
+<meta charset="UTF-8" />
+
+<h1>Programa</h1>
+
+<script>
+  var aniho = 2025;
+
+  const imprimir = (msg) => {
+    document.write(`<big>${msg}</big>`);
+  };
+
+  function saltarLinea() {
+    imprimir("<br>");
+    imprimir("<br>");
+  }
+
+  imprimir(`Juan tiene: ${aniho - 2000} años`);
+  saltarLinea();
+  imprimir(`Pedro tiene: ${aniho - 1995} años`);
+  aniho = 2030;
+  saltarLinea();
+  imprimir(`Carlos tiene: ${aniho - 2005} años`);
+</script>

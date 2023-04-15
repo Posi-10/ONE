@@ -1,0 +1,22 @@
+<meta charset="UTF-8" />
+
+<h1>Diferencia de edad</h1>
+
+<script>
+  let myAge = 23;
+  let ageBrother = 16;
+
+  const imrimir = (msg) => document.write(msg);
+
+  const saltarLinea = () => imrimir("<br>");
+
+  let age = myAge > ageBrother ? myAge - ageBrother : ageBrother - myAge;
+
+  imrimir(`Yo tengo: ${myAge} años.`);
+  saltarLinea();
+  saltarLinea();
+  imrimir(`Mi hermano tiene: ${ageBrother} años.`);
+  saltarLinea();
+  saltarLinea();
+  imrimir(`Tenemos ${age} años de diferencia.`);
+</script>

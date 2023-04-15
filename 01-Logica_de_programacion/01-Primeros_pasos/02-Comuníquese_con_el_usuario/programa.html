@@ -1,0 +1,70 @@
+<meta charset="UTF-8" />
+
+<h2>HTML</h2>
+<!-- Parte 1 -->
+<!-- la edad de Christian es...
+<br>
+25+8 -->
+
+<br /><br />
+
+<h2>JavaScript</h2>
+
+<script>
+  // Variables
+
+  var aniho = 2023;
+
+  // Parte1
+  // alert('La edad de Christian es ...')
+  // alert('?')
+  // Parte 2
+  /* document.write("la edad de Christian es...")
+    document.write("<br>")
+    document.write(25+8)
+    document.write("<br>")
+    document.write(100/4)
+    document.write("<br>")
+    document.write('20'+'15') */
+  // Parte 3
+  /* document.write('El año de nacimiento de Christion es...');
+    document.write('<br>');
+    document.write(2023-(29+3));
+    document.write(`<br> <h4>Promedio</h4>`)
+    document.write('El promedio de Juan, Pedro y Carlos es...');
+    document.write('<br>');
+    document.write((20+25+15)/3)
+    document.write(`<br> <h4>Suma</h4>`)
+    document.write('la suma de las edades de Juan, Pedro y Carlos es...<br>' + (20+25+15));
+    document.write(`<br> <h4>Años</h4>`)
+    document.write(`Juan nació en el año... <br> ${ 2023 - (20+3) } <br><br>`)
+    document.write(`Pedro nació en el año... <br> ${ 2023 - (25+3) } <br><br>`)
+    document.write(`Carlos nació en el año... <br> ${ 2023 - (15+3) } <br><br>`) */
+  document.write(`<br> <h4>Edad</h4>`);
+  document.write(`Juan tiene: ${aniho - 2000} años <br><br>`);
+  document.write(`Pedro tiene: ${aniho - 1995} años <br><br>`);
+  aniho = 2025;
+  document.write(`Carlos tiene: ${aniho - 2005} años <br><br>`);
+
+  aniho = 2050;
+  document.write("<h1>JavaScript</h1>");
+  document.write("<br><h3>Años</h2><br>");
+  document.write(`Ximena tiene: ${aniho - 2010} años<br>`);
+  document.write(`Paola tiene: ${aniho - 1995} años<br>`);
+  document.write(`Laura tiene: ${aniho - 2005} años<br>`);
+
+  var edadXimena = 40;
+  var edadPaola = 55;
+  var edadLaura = 45;
+
+  var nombre1 = "Ximena";
+  var nombre2 = "Paola";
+  var nombre3 = "Laura";
+
+  var promedio = (edadXimena + edadPaola + edadLaura) / 3;
+  document.write(
+    `El promedio de las edades de ${nombre1}, ${nombre2} y ${nombre3} es: ${Math.round(
+      promedio
+    )}<br>`
+  );
+</script>

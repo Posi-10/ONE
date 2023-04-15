@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego de Adivinación</title>
+  </head>
+  <body>
+    <h1>Juego de Adivinación</h1>
+
+    <script>
+      const saltoLinea = () => {
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+      };
+
+      const imprimir = (infromacion) => {
+        document.write(infromacion);
+        saltoLinea();
+      };
+
+      let numero_pensado = Math.floor(Math.random() * 11);
+      let intento = 0;
+      let numero_lanzado;
+
+      while (intento < 3) {
+        numero_lanzado = parseInt(
+          prompt(`Ingrese un número entre del 0 al 10, intento: ${intento + 1}`)
+        );
+
+        if (numero_pensado === numero_lanzado) {
+          imprimir("Usted acerto");
+
+          break;
+        }
+
+        intento++;
+      }
+
+      if (numero_lanzado !== numero_pensado) {
+        imprimir(`El numero pensado es ${numero_pensado}`);
+      }
+    </script>
+  </body>
+</html>

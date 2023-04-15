@@ -1,0 +1,54 @@
+<canvas width="800" height="800"></canvas>
+
+<script>
+  const canvas = document.querySelector("canvas");
+  let cube = canvas.getContext("2d");
+
+  const gris = (x, y, w, h) => {
+    cube.fillStyle = "#a6a6a690";
+    cube.fillRect(x, y, w, h);
+  };
+
+  const negro = (x, y, w, h) => {
+    cube.fillStyle = "#000000";
+    cube.fillRect(x, y, w, h);
+  };
+
+  const humo = (x, y, w, h) => {
+    cube.fillStyle = "#00000080";
+    cube.fillRect(x, y, w, h);
+  };
+
+  cube.fillStyle = "#0db50d";
+  cube.fillRect(0, 0, 800, 800);
+
+  gris(0, 100, 100, 300);
+  gris(0, 700, 100, 100);
+  gris(100, 0, 200, 200);
+  gris(100, 400, 200, 100);
+  gris(100, 500, 100, 200);
+  gris(300, 100, 200, 100);
+  gris(400, 200, 100, 100);
+  gris(300, 300, 200, 100);
+  gris(300, 700, 200, 100);
+  gris(700, 0, 100, 100);
+  gris(600, 100, 100, 100);
+  gris(600, 400, 200, 100);
+  gris(600, 500, 100, 100);
+  gris(600, 600, 200, 200);
+
+  humo(100, 200, 200, 100);
+  humo(100, 300, 100, 100);
+  humo(500, 200, 200, 100);
+  humo(600, 300, 100, 100);
+  humo(300, 400, 200, 100);
+  humo(200, 500, 100, 100);
+  humo(500, 500, 100, 100);
+  humo(200, 700, 100, 100);
+  humo(500, 700, 100, 100);
+
+  negro(200, 300, 100, 100);
+  negro(500, 300, 100, 100);
+  negro(300, 500, 200, 100);
+  negro(200, 600, 400, 100);
+</script>

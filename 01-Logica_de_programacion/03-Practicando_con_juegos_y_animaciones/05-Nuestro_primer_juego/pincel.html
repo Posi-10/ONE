@@ -1,0 +1,55 @@
+<canvas width="600px" height="400px"> </canvas>
+
+<script>
+  const pantalla = document.querySelector("canvas");
+  let pincel = pantalla.getContext("2d");
+
+  let colores = ["#f00", "#0f0", "#00f"];
+  let puedo_dibujar = false;
+  let color = colores[0];
+
+  pincel.fillStyle = "grey";
+  pincel.fillRect(0, 0, 600, 400);
+
+  pincel.fillStyle = colores[0];
+  pincel.fillRect(0, 0, 50, 50);
+  pincel.fillStyle = colores[1];
+  pincel.fillRect(50, 0, 50, 50);
+  pincel.fillStyle = colores[2];
+  pincel.fillRect(100, 0, 50, 50);
+
+  pantalla.addEventListener("mousemove", (event) => {
+    let x = event.pageX - pantalla.offsetLeft;
+    let y = event.pageY - pantalla.offsetTop;
+
+    if (puedo_dibujar) {
+      if (!(155 >= x && 55 >= y)) {
+        pincel.fillStyle = color;
+        pincel.beginPath();
+        pincel.arc(x, y, 5, 0, 2 * 3.14);
+        pincel.fill();
+      }
+    }
+  });
+
+  pantalla.addEventListener("mousedown", () => (puedo_dibujar = true));
+
+  pantalla.addEventListener("mouseup", () => (puedo_dibujar = false));
+
+  pantalla.addEventListener("click", (event) => {
+    let x = event.pageX - pantalla.offsetLeft;
+    let y = event.pageY - pantalla.offsetTop;
+
+    if (x >= 0 && x <= 50 && y >= 0 && y <= 50) {
+      color = colores[0];
+    }
+
+    if (x >= 51 && x <= 100 && y >= 0 && y <= 50) {
+      color = colores[1];
+    }
+
+    if (x >= 101 && x <= 150 && y >= 0 && y <= 50) {
+      color = colores[2];
+    }
+  });
+</script>

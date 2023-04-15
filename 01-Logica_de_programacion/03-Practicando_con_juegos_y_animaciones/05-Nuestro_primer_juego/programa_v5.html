@@ -1,0 +1,61 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+  const pantalla = document.querySelector("canvas");
+  let pincel = pantalla.getContext("2d");
+
+  let radio = 12;
+  let xAleatorio;
+  let yAleatorio;
+
+  pincel.fillStyle = "grey";
+  pincel.fillRect(0, 0, 600, 400);
+
+  const disenarCircuferencia = (x, y, radio, color) => {
+    pincel.fillStyle = color;
+    pincel.beginPath();
+    pincel.arc(x, y, radio, 0, 2 * Math.PI);
+    pincel.fill();
+  };
+
+  const limpiarPantalla = () => {
+    pincel.clearRect(0, 0, 600, 400);
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0, 0, 600, 400);
+  };
+
+  const actualizarPantall = () => {
+    limpiarPantalla();
+
+    xAleatorio = sortearPosicion(600);
+    yAleatorio = sortearPosicion(400);
+
+    disenarObjetivo(xAleatorio, yAleatorio);
+  };
+
+  const disenarObjetivo = (x, y) => {
+    disenarCircuferencia(x, y, radio + 20, "#f00");
+    disenarCircuferencia(x, y, radio + 10, "#fff");
+    disenarCircuferencia(x, y, radio, "#f00");
+  };
+
+  const sortearPosicion = (maximo) => {
+    return Math.floor(Math.random() * maximo);
+  };
+
+  setInterval(actualizarPantall, 1000);
+
+  pantalla.addEventListener("click", (event) => {
+    let x = event.pageX - pantalla.offsetLeft;
+    let y = event.pageY - pantalla.offsetTop;
+
+    if (
+      x < xAleatorio + radio &&
+      x > xAleatorio - radio &&
+      y < yAleatorio + radio &&
+      y > yAleatorio - radio
+    ) {
+      alert("Tiro Certero");
+    }
+  });
+</script>

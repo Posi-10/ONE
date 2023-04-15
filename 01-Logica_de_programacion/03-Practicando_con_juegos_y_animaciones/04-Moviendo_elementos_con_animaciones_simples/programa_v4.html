@@ -1,0 +1,35 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+  const pantalla = document.querySelector("canvas");
+  let pincel = pantalla.getContext("2d");
+
+  let x = 0;
+  let posicion = false;
+
+  pincel.fillStyle = "grey";
+  pincel.fillRect(0, 0, 600, 400);
+
+  const disenarCircuferencia = (x, y, radio) => {
+    pincel.fillStyle = "#00f";
+    pincel.beginPath();
+    pincel.arc(x, y, radio, 0, 2 * Math.PI);
+    pincel.fill();
+  };
+
+  const limpiarPantalla = () => {
+    pincel.clearRect(0, 0, 600, 400);
+  };
+
+  const actualizarPantall = () => {
+    if (x === 600) posicion = true;
+
+    if (x === 0) posicion = false;
+
+    limpiarPantalla();
+    disenarCircuferencia(x, 20, 10);
+    !posicion ? x++ : x--;
+  };
+
+  setInterval(actualizarPantall, 10);
+</script>

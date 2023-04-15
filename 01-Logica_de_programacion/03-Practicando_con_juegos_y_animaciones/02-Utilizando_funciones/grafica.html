@@ -1,0 +1,60 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+  const serie2009 = [6, 47, 41, 3, 3];
+  const serie2019 = [81, 9, 3, 3, 4];
+  const colores = ["blue", "green", "yellow", "red", "gray"];
+  const name = [
+    "Chrome",
+    "Firefox",
+    "Internet Explorer/Edge",
+    "Safari",
+    "Otros",
+  ];
+
+  const dibujarRectangulo = (x, y, base, altura, color) => {
+    let pantalla = document.querySelector("canvas");
+    let pincel = pantalla.getContext("2d");
+
+    pincel.fillStyle = color;
+    pincel.fillRect(x, y, base, altura);
+    pincel.strokeStyle = "black";
+    pincel.strokeRect(x, y, base, altura);
+  };
+
+  const escribirTexto = (x, y, texto) => {
+    let pantalla = document.querySelector("canvas");
+    let pincel = pantalla.getContext("2d");
+
+    pincel.font = "15px Georgia";
+    pincel.fillStyle = "black";
+    pincel.fillText(texto, x, y);
+  };
+  let acumular2009 = 10;
+  let acumular2019 = 10;
+
+  for (let index = 0; index < colores.length; index++) {
+    dibujarRectangulo(
+      0,
+      acumular2009 * 3.62,
+      150,
+      serie2009[index] * 3.62,
+      colores[index]
+    );
+    escribirTexto(160, (acumular2009 + 3) * 3.62, name[index]);
+    acumular2009 = acumular2009 + serie2009[index];
+
+    dibujarRectangulo(
+      300,
+      acumular2019 * 3.62,
+      150,
+      serie2019[index] * 3.62,
+      colores[index]
+    );
+    escribirTexto(460, (acumular2019 + 3) * 3.62, name[index]);
+    acumular2019 = acumular2019 + serie2019[index];
+  }
+
+  escribirTexto(50, 20, "2009");
+  escribirTexto(360, 20, "2019");
+</script>

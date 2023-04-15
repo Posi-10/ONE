@@ -1,0 +1,33 @@
+<canvas width="600" height="400"> </canvas>
+
+<script>
+  let pantalla = document.querySelector("canvas");
+  let pincel = pantalla.getContext("2d");
+
+  let color = ["#00f", "#f00", "#0f0"];
+  let contador = 0;
+
+  pincel.fillStyle = "grey";
+  pincel.fillRect(0, 0, 600, 400);
+
+  pantalla.addEventListener("click", (evento) => {
+    let x = evento.pageX - pantalla.offsetLeft;
+    let y = evento.pageY - pantalla.offsetTop;
+    pincel.fillStyle = color[contador];
+    pincel.beginPath();
+    pincel.arc(x, y, 10, 0, 2 * 3.14);
+    pincel.fill();
+    console.log(x + "," + y);
+  });
+
+  pantalla.addEventListener("contextmenu", () => {
+    // alert("Funcionó");
+
+    if (contador > color.length) {
+      contador = 0;
+    }
+    contador++;
+
+    return false;
+  });
+</script>

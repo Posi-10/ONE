@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media</title>
+  </head>
+  <body>
+    <h1>Media</h1>
+
+    <script>
+      const saltoLinea = () => {
+        document.write("<br>");
+        document.write("<br>");
+      };
+
+      const imprimir = (infromacion) => {
+        document.write(infromacion);
+        saltoLinea();
+      };
+
+      let familia = [];
+      let cuantos_familiares = parseInt(
+        prompt("¿Cuantas pesonas son en tu familia?")
+      );
+      let media = 0;
+
+      const pedir_edades = () => {
+        for (let i = 0; i < cuantos_familiares; i++) {
+          familia.push(
+            parseInt(prompt(`¿Cuantos años tiene la persona ${i + 1}?`))
+          );
+        }
+      };
+
+      const media_familiar = () => {
+        let index = 0;
+        while (index < cuantos_familiares) {
+          media = media + familia[index];
+
+          index++;
+        }
+
+        media = media / familia.length;
+
+        imprimir(`La media de las edades es: ${media}`);
+      };
+
+      pedir_edades();
+      media_familiar();
+    </script>
+  </body>
+</html>
