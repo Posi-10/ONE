@@ -1,0 +1,45 @@
+em strong {
+  color: #ff0000;
+}
+
+.diferenciales ul {
+  display: inline-block;
+  vertical-align: top;
+  width: 20%;
+  margin-right: 15%;
+}
+
+.principal {
+  background-color: #cccccc;
+  padding: 20px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.banner {
+  width: 100%;
+}
+
+.items {
+  font-style: italic;
+}
+
+.diferenciales {
+  background: #eeeeee;
+  padding: 30px;
+}
+
+.img-diferenciales {
+  width: 50%;
+  align-items: end;
+}
+
+#titulo-principal {
+  padding-left: 30px;
+}
